@@ -1,0 +1,84 @@
+html {
+    height: 100%;
+}
+  
+body {
+    height: 100%;
+    margin: 0;
+}
+
+.mainblock{
+    width: 100%;
+    height: 100%;
+
+}
+
+.block{
+    border: 1px solid blue;
+    height: 40%;
+    width: 100%;
+}
+
+.block figure.side_image {
+    display: inline-block;
+    vertical-align: top;
+    border: 1px solid #000;    
+    height: 100%;
+    margin: 0;
+}
+
+.block img {
+    height: 100%;
+}
+
+.block p{
+    margin-top: 0;
+}
+
+.recipe{
+    display: inline-block;
+    vertical-align: top;
+    border: 1px solid #000;
+    height: 100%;
+    width: 30%;
+    margin: 0;
+    overflow-wrap: break-word;
+
+    padding-left: 1%;
+    padding-right: 1%;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+.inline-block{
+    border: 1px solid green;
+    height: 60%;
+    width: 100%;
+    margin-top: 1px;
+}
+
+.inline-block p{
+    display: inline-block;
+    vertical-align: top;
+    border: 1px solid #000;
+    width: 10%;
+    height: 40%;
+    margin-top: 0;
+    margin-bottom: 5px;
+    margin-right: 5px;
+    margin-left: 5px;
+    padding: 1%;
+}
+
+.inline-block .title{
+    margin: 10px;
+}
+
+
+.left, .right {
+    display: inline-block;
+}
+
+.frame {
+    display: flex;
+    justify-content: space-between;
+}
