@@ -49,11 +49,28 @@ body {
     padding-top: 0;
     padding-bottom: 0;
 }
+
 .inline-block{
     border: 1px solid green;
     height: 60%;
     width: 100%;
     margin-top: 1px;
+}
+
+.inline-block .title{
+    margin: 10px;
+}
+.inline-block .block{
+    display: inline-block;
+    vertical-align: top;
+    border: 1px solid pink;
+    width: fit-content;
+    height: 40%;
+    margin-top: 0;
+    margin-bottom: 5px;
+    margin-right: 5px;
+    margin-left: 5px;
+    padding: 1%;
 }
 
 .inline-block p{
@@ -69,10 +86,17 @@ body {
     padding: 1%;
 }
 
-.inline-block .title{
-    margin: 10px;
+.inline-block.side_image {
+    display: inline-block;
+    vertical-align: top;
+    border: 1px solid #000;    
+    height: 100%;
+    margin: 0;
 }
 
+.inline-block img {
+    height: 100%;
+}
 
 .left, .right {
     display: inline-block;
@@ -81,4 +105,23 @@ body {
 .frame {
     display: flex;
     justify-content: space-between;
+}
+
+.tejun{
+    display: inline-block;
+    vertical-align: top;
+    height: 100%;
+    width: 200px;
+    margin: 0;
+    overflow-wrap: break-word;
+}
+
+.line{
+    display: inline-block;
+    vertical-align: top;
+    border-left: 3px solid gray;
+    height: 100%;
+    width: 10px;
+    margin-left: 5px;
+
 }
