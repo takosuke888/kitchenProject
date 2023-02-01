@@ -1,0 +1,163 @@
+html {
+    height: 100%;
+}
+  
+body {
+    height: 100%;
+    margin: 0;
+}
+
+.mainblock{
+    width: 100%;
+    height: 100%;
+}
+
+.recipe_name{
+    font-weight: bold;
+    font-size: 1.5em;
+    padding: 0 1% 0;
+    color: rgb(72, 126, 47);
+}
+
+.ingredients_block{
+    height: 35%;
+    width: 100%;
+    padding: 0 1% 0;
+    margin-top: 1%;
+}
+
+.ingredients_block .side_image {
+    display: inline-block;
+    vertical-align: middle;
+    height: 95%;
+    margin: 0;
+}
+
+.ingredients_block img {
+    height: 100%;
+}
+
+.ingredients_block p{
+    margin-top: 0;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 2%;
+    font-weight: bold;
+}
+
+.ingredients_list{
+    display: inline-block;
+    vertical-align: top;
+    height: 100%;
+    width: 15%;
+    margin: 0;
+    overflow-wrap: break-word;
+    padding-left: 1%;
+    padding-right: 1%;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.step_block{
+    border-top: 2px solid rgb(182, 182, 182);
+    height: 60%;
+    width: 100%;
+    padding: 0 1% 0;
+}
+
+.step_title{
+    margin: 10px;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+.step_block .block{
+    position:  relative;   
+    display: inline-block;
+    vertical-align: top;
+
+    width: fit-content;
+    height: 40%;
+    margin-top: 0;
+    margin-bottom: 5px;
+    margin-right: 25px;
+    margin-left: 5px;
+    padding: 0%;
+}
+
+.step_block p{
+    display: inline-block;
+    vertical-align: top;
+    border: 1px solid #000;
+    width: 10%;
+    height: 40%;
+    margin-top: 0;
+    margin-bottom: 5px;
+    margin-right: 5px;
+    margin-left: 5px;
+    padding: 0%;
+}
+
+.step_block .side_image { 
+    display: inline-block;
+    vertical-align: middle;
+    height: 100%;
+    margin: 0;
+}
+
+.aimg{
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.step_block img {
+    height: auto;
+    max-width: 150px;
+}
+
+
+
+.left, .right {
+    display: inline-block;
+}
+
+.ingredients_row {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid rgb(212, 212, 212);
+    margin-top: 2px;
+    font-size: 0.8em;
+}
+
+.step_text{
+    display: inline-block;
+    vertical-align: top;
+    height: 100%;
+    width: 200px;
+    margin-top: 35px;
+    margin-left: 5px;
+    overflow-wrap: break-word;
+}
+
+.line{
+    display: inline-block;
+    vertical-align: top;
+    border-left: 3px solid rgb(214, 214, 214);
+    height: 100%;
+    width: 10px;
+    margin-left: 5px;
+}
+
+.step_count{
+    position:  absolute;        /* 要素の配置方法を指定 */
+    background-color: rgb(180, 180, 180);     /* 背景色指定 */            /* 余白指定 */
+    left:  0px;                /* 左からの位置指定 */
+    top: 0px;                  /* 上からの位置指定 */ 
+    border-radius: 5px;
+    width: 30px;
+    height: 28px;
+    text-align:center;
+    padding:2px 0;
+    color: white;
+    font-weight: bold;
+}
