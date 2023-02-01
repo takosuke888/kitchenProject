@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kitchen Project</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <link rel="stylesheet" href="./static/css/index.css">
+</head>
+
+<style>
+
+</style>
+
+<body>
+
+    <div class="mainblock">
+        <div class="recipe_name">{{data.title}}</div>
+        <div class="ingredients_block">
+            <div class="side_image"><img src={{data.static_main_img_path}}></div>        
+            <div class="ingredients_list">
+                <p>材料</p>
+                {% for i in range(data.ingredient_length) %}
+                <div class="ingredients_row">
+                    <span class="left">{{data.ingredient_names[i]}}</span>
+                    <span class="right">{{data.ingredient_amounts[i]}}</span>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+          
+         <div class="step_block">
+            <div class="step_title">作り方</div>
+                {% for i in range(data.step_length) %}
+                <div class="block">
+                    <div class="step_count">{{i+1}}</div>
+                    <div class="step_text">{{data.step_texts[i]}}</div>
+                    {% if data.static_step_img_paths[i] != 'none' %}
+                    <div class="side_image"><div class="aimg"><img src={{data.static_step_img_paths[i]}}></div></div> 
+                    {% endif %}
+                </div>
+                {% endfor %}
+            </div>
+    </div>
+
+
+
+
+</body>
+
+
+
+</html>
