@@ -30,13 +30,28 @@ class cockpadData():
 
         self.imgDir = ""
 
+    def clearData(self):
+        self.url = ""
+        self.title = ""
+        self.author = ""
+        self.main_img_path = ""
+        self.ingredient_length = 0
+        self.ingredient_names = []
+        self.ingredient_amounts = []
+        self.step_length = 0
+        self.step_last_index = 100
+        self.step_texts = []
+        self.step_img_paths = []
+        self.static_step_img_paths = []
+        self.static_main_img_path = ""
+        self.imgDir = ""
+
     def checkURL():
         return False
 
-    def scraping(self, url, imgdir, last_step = 100):
+    def scraping(self, url, imgdir):
         self.url = url
         self.imgDir = imgdir
-        self.step_last_index = last_step
 
         soup = BeautifulSoup(requests.get(self.url).content,'lxml')
         print("Access...", self.url)

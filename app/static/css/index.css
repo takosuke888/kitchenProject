@@ -150,14 +150,14 @@ body {
 
 .step_count{
     position:  absolute;        /* 要素の配置方法を指定 */
-    background-color: rgb(180, 180, 180);     /* 背景色指定 */            /* 余白指定 */
+    background-color: rgb(77, 77, 77);     /* 背景色指定 */            /* 余白指定 */
     left:  0px;                /* 左からの位置指定 */
     top: 0px;                  /* 上からの位置指定 */ 
     border-radius: 5px;
     width: 30px;
     height: 28px;
     text-align:center;
-    padding:2px 0;
+    padding-top: 5px;
     color: white;
     font-weight: bold;
 }
