@@ -1,5 +1,6 @@
 from flask import Flask, request, make_response, render_template, url_for
 import os
+import subprocess, shlex
 
 from . import scraping
 
@@ -34,6 +35,10 @@ def recieve_url():
     # スクレイピング処理
     coockpad_data.scraping(url, IMG_DIR)
     print(coockpad_data.title)
+
+    render_template('projection.html', data = coockpad_data)
+    args = shlex.split("chromium-browser http://100.64.1.67:8000/projection --kiosk")
+    ret = subprocess.call(args)
 
     # スクレイピングが完了したら、PC側でブラウザを起動
     return render_template('index.html')

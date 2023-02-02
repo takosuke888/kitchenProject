@@ -155,9 +155,9 @@ body {
     top: 0px;                  /* 上からの位置指定 */ 
     border-radius: 5px;
     width: 30px;
-    height: 28px;
+    height: 23px;
     text-align:center;
-    padding:2px 0;
+    padding-top: 5px;
     color: white;
     font-weight: bold;
 }
