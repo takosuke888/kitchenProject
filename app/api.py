@@ -2,6 +2,7 @@ from flask import Flask, request, make_response, render_template, url_for
 import os
 import cv2
 import numpy as np
+
 import subprocess, shlex
 
 
@@ -12,18 +13,14 @@ api = Flask(__name__, static_folder='./static')
 coockpad_data = scraping.cockpadData()
 
 
-
 # スマホに表示する画面
 @api.route('/', methods=['GET'])
 def index():
     
-    black = np.zeros((1080, 1920, 1), np.uint8)
-    
-    cv2.namedWindow('black', cv2.WINDOW_NORMAL)
-    cv2.setWindowProperty('black', cv2.WND_PROP_FULLSCREEN, cv2.WINDOW_FULLSCREEN)
-    
-    cv2.imshow('black', black)
-    cv2.waitKey(1)
+
+    render_template('black.html')
+    args = shlex.split("chromium-browser http://0.0.0.0:8000/black --kiosk --incognito")
+    ret = subprocess.call(args)
 
     coockpad_data.clearData()
     return render_template('index.html')
@@ -54,7 +51,7 @@ def recieve_url():
         print("INVALID URL")
         return render_template('index.html')
 
-    IMG_DIR = '/static/img/' + url.split('/')[-1]
+    IMG_DIR = '/static/img/cookpad-recipe/' + url.split('/')[-1]
     if not os.path.exists('app' + IMG_DIR):
     # ディレクトリが存在しない場合、ディレクトリを作成する
         os.makedirs('app' + IMG_DIR)
@@ -64,10 +61,10 @@ def recieve_url():
     print(coockpad_data.title)
 
     #for raspi
-    cv2.destroyAllWindows()
-    #render_template('projection.html', data = coockpad_data)
-    #args = shlex.split("chromium-browser http://100.64.1.67.8000/projection --kiosk")
-    #ret = subprocess(args)
+
+    render_template('projection.html', data = coockpad_data)
+    args = shlex.split("chromium-browser http://0.0.0.0:8000/projection --kiosk --incognito")
+    ret = subprocess.call(args)
 
     # スクレイピングが完了したら、PC側でブラウザを起動
     return render_template('index.html')
@@ -76,5 +73,10 @@ def recieve_url():
 @api.route('/projection', methods=['GET'])
 def projection():
     return render_template('projection.html', data = coockpad_data)
+
+# プロジェクタ用の表示画面のURL
+@api.route('/black', methods=['GET'])
+def disp_black():
+    return render_template('black.html')
 
 

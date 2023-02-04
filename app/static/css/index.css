@@ -7,6 +7,10 @@ body {
     margin: 0;
 }
 
+body::-webkit-scrollbar{
+    display: none;
+}
+
 .mainblock{
     width: 100%;
     height: 100%;
@@ -15,7 +19,7 @@ body {
 .recipe_name{
     font-weight: bold;
     font-size: 1.5em;
-    padding: 0 1% 0;
+    padding: 1% 1% 0;
     color: rgb(72, 126, 47);
 }
 
@@ -49,19 +53,20 @@ body {
     display: inline-block;
     vertical-align: top;
     height: 100%;
-    width: 15%;
+    width: 20%;
     margin: 0;
     overflow-wrap: break-word;
     padding-left: 1%;
     padding-right: 1%;
     padding-top: 0;
     padding-bottom: 0;
+    font-size: 1.5em;
 }
 
 .step_block{
     border-top: 2px solid rgb(182, 182, 182);
     height: 60%;
-    width: 100%;
+    width: 90%;
     padding: 0 1% 0;
 }
 
@@ -77,7 +82,7 @@ body {
 
     width: fit-content;
     height: 40%;
-    margin-top: 0;
+    margin-top: 1px;
     margin-bottom: 5px;
     margin-right: 25px;
     margin-left: 5px;
@@ -112,7 +117,7 @@ body {
 
 .step_block img {
     height: auto;
-    max-width: 150px;
+    max-width: 120px;
 }
 
 
@@ -137,6 +142,7 @@ body {
     margin-top: 35px;
     margin-left: 5px;
     overflow-wrap: break-word;
+    font-size: 1.2em;
 }
 
 .line{
@@ -155,9 +161,15 @@ body {
     top: 0px;                  /* 上からの位置指定 */ 
     border-radius: 5px;
     width: 30px;
-    height: 28px;
+    height: 25px;
     text-align:center;
-    padding-top: 5px;
+    padding-top: 7px;
     color: white;
     font-weight: bold;
+}
+
+.black{
+    width: 2000px;
+    height: 2000px;
+    background-color: rgb(0,0,0); 
 }
