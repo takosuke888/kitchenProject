@@ -18,7 +18,6 @@ coockpad_data = scraping.cockpadData()
 @api.route('/', methods=['GET'])
 def index():
     
-
     render_template('black.html')
     args = shlex.split("chromium-browser http://0.0.0.0:8000/black --kiosk --incognito")
     browser_call.call_browser(args)
@@ -62,10 +61,9 @@ def recieve_url():
     print(coockpad_data.title)
 
     #for raspi
-
     render_template('projection.html', data = coockpad_data)
     args = shlex.split("chromium-browser http://0.0.0.0:8000/projection --kiosk --incognito")
-    ret = subprocess.call(args)
+    browser_call.call_browser(args)
 
     # スクレイピングが完了したら、PC側でブラウザを起動
     return render_template('index.html')

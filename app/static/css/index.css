@@ -18,7 +18,7 @@ body::-webkit-scrollbar{
 
 .recipe_name{
     font-weight: bold;
-    font-size: 1.5em;
+    font-size: 1.6em;
     padding: 1% 1% 0;
     color: rgb(72, 126, 47);
 }
@@ -117,7 +117,7 @@ body::-webkit-scrollbar{
 
 .step_block img {
     height: auto;
-    max-width: 120px;
+    max-width: 150px;
 }
 
 
@@ -131,7 +131,6 @@ body::-webkit-scrollbar{
     justify-content: space-between;
     border-bottom: 1px solid rgb(212, 212, 212);
     margin-top: 2px;
-    font-size: 0.8em;
 }
 
 .step_text{
@@ -142,7 +141,7 @@ body::-webkit-scrollbar{
     margin-top: 35px;
     margin-left: 5px;
     overflow-wrap: break-word;
-    font-size: 1.2em;
+    font-size: 1.5em;
 }
 
 .line{
