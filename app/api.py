@@ -4,6 +4,7 @@ import cv2
 import numpy as np
 import subprocess, shlex
 
+
 from . import scraping
 
 api = Flask(__name__, static_folder='./static')
@@ -16,10 +17,12 @@ coockpad_data = scraping.cockpadData()
 @api.route('/', methods=['GET'])
 def index():
     
-    black = np.zeros(1080, 1920)
-    cv2.namedWindow('black')
+    black = np.zeros((1080, 1920, 1), np.uint8)
+    
     cv2.namedWindow('black', cv2.WINDOW_NORMAL)
     cv2.setWindowProperty('black', cv2.WND_PROP_FULLSCREEN, cv2.WINDOW_FULLSCREEN)
+    
+    cv2.imshow('black', black)
     cv2.waitKey(1)
 
     coockpad_data.clearData()
@@ -62,9 +65,9 @@ def recieve_url():
 
     #for raspi
     cv2.destroyAllWindows()
-    render_template('projection.html', data = coockpad_data)
-    args = shlex.split("chromium-browser http://100.64.1.67.8000/projection --kiosk")
-    ret = subprocess(args)
+    #render_template('projection.html', data = coockpad_data)
+    #args = shlex.split("chromium-browser http://100.64.1.67.8000/projection --kiosk")
+    #ret = subprocess(args)
 
     # スクレイピングが完了したら、PC側でブラウザを起動
     return render_template('index.html')
