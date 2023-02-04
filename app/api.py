@@ -7,6 +7,7 @@ import subprocess, shlex
 
 
 from . import scraping
+from . import browser_call
 
 api = Flask(__name__, static_folder='./static')
 
@@ -20,7 +21,7 @@ def index():
 
     render_template('black.html')
     args = shlex.split("chromium-browser http://0.0.0.0:8000/black --kiosk --incognito")
-    ret = subprocess.call(args)
+    browser_call.call_browser(args)
 
     coockpad_data.clearData()
     return render_template('index.html')
