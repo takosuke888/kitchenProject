@@ -33,6 +33,13 @@ body {
     margin: 0;
 }
 
+.ingredients_block video {
+    display: inline-block;
+    vertical-align: middle;
+    height: 95%;
+    margin: 0;
+}
+
 .ingredients_block img {
     height: 100%;
 }

@@ -17,7 +17,7 @@
     <div class="mainblock">
         <div class="recipe_name">{{data.title}}</div>
         <div class="ingredients_block">
-            <div class="side_image"><img src={{data.static_main_img_path}}></div>        
+            <div class="side_image"><img src={{data.main_img_path}}></div>        
             <div class="ingredients_list">
                 <p>材料</p>
                 {% for i in range(data.ingredient_length) %}
@@ -36,7 +36,7 @@
                     <div class="step_count">{{i+1}}</div>
                     <div class="step_text">{{data.step_texts[i]}}</div>
                     {% if data.static_step_img_paths[i] != 'none' %}
-                    <div class="side_image"><div class="aimg"><img src={{data.static_step_img_paths[i]}}></div></div> 
+                    <div class="side_image"><div class="aimg"><img src={{data.step_img_paths[i]}}></div></div> 
                     {% endif %}
                 </div>
                 {% endfor %}

@@ -60,7 +60,7 @@ class cockpadData():
         self.getMetaData(soup)
         self.getIngredients(soup)
         self.getSteps(soup)
-        self.getimages()
+        #self.getimages()
 
     def getIngredients(self, soup):
         ingredient_names = soup.findAll('div', class_='ingredient_name')
