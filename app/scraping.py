@@ -1,4 +1,3 @@
-# scraping-img-1.py
 import urllib.request #拡張子のないURLから画像を保存
 import requests # urlを読み込むためrequestsをインポート
 from bs4 import BeautifulSoup # htmlを読み込むためBeautifulSoupをインポート
@@ -94,7 +93,7 @@ class cockpadData():
         self.main_img_path = soup.find(class_='photo large_photo_clickable')['src']
 
     
-
+    # not using now
     def getimages(self):
 
         dl = urllib.request.urlopen(self.main_img_path).read()
