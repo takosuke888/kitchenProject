@@ -3,8 +3,8 @@ import sys
 from selenium import webdriver
 
 options = webdriver.ChromeOptions()
-#options.add_argument('--start-maximized')
-#options.add_argument('--kiosk')
+options.add_argument('--start-maximized')
+options.add_argument('--kiosk')
 options.add_argument('--incognito')
 options.add_experimental_option('excludeSwitches', ['enable-automation'])
 browser = webdriver.Chrome(executable_path="/usr/lib/chromium-browser/chromedriver", chrome_options=options)

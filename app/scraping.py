@@ -87,7 +87,11 @@ class cookpadData():
 
     def getMetaData(self, soup):
         self.title = soup.find(class_='recipe-title').get_text().replace('\n', '')
-        self.author = soup.find(class_='author recipe_author_container').get_text().replace('\n', '')
+        author = soup.find(class_='author recipe_author_container')#.get_text().replace('\n', '')
+        if author is None:
+            author = soup.find(class_='author')
+        if author is not None:
+            self.author = author.get_text().replace('\n', '')
         self.main_img_path = soup.find(class_='photo large_photo_clickable')['src']
 
     
