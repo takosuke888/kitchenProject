@@ -25,8 +25,8 @@ class cookpadData():
         self.step_texts = []
 
 
-        self.step_img_paths = []
-        self.main_img_path = ""
+        self.static_step_img_paths = []
+        self.static_main_img_path = ""
 
 
     def clearData(self):
@@ -40,8 +40,8 @@ class cookpadData():
         self.step_length = 0
         self.step_last_index = 100
         self.step_texts = []
-        self.step_img_paths = []
-        self.main_img_path = ""
+        self.static_step_img_paths = []
+        self.static_main_img_path = ""
 
 
     def checkURL():
@@ -98,21 +98,20 @@ class cookpadData():
         dl = urllib.request.urlopen(self.main_img_path).read()
         # ファイルへの保存
         save_name = 'app' + self.imgDir + '/main.png'
-        self.main_img_path = '.' + self.imgDir + '/main.png'
+        self.static_main_img_path = '.' + self.imgDir + '/main.png'
         with open(save_name, 'wb') as f:
             f.write(dl)
 
         for i, url in enumerate(self.step_img_paths):
             if url == 'none':
-                self.step_img_paths.append("none")
+                self.static_step_img_paths.append("none")
                 continue
             dl = urllib.request.urlopen(url).read()
             time.sleep(1)
             # ファイルへの保存
-            self.step_img_paths.append('.' + self.imgDir + '/step_' + str(i) + '.png')
+            self.static_step_img_paths.append('.' + self.imgDir + '/step_' + str(i) + '.png')
             save_name = 'app' + self.imgDir + '/step_' + str(i) + '.png'
             with open(save_name, 'wb') as f:
                 f.write(dl)
     """
-
 

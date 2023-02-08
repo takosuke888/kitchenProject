@@ -3,6 +3,7 @@ from app.api import browser_call
 import socket
 import qrcode
 import time
+import os
 
 if __name__ == '__main__':
     
@@ -19,7 +20,7 @@ if __name__ == '__main__':
     img.save("app/static/img/qr.png")
     
     # launch browser
-    browser_call.call_browser('app/templates/black.html')
+    browser_call.call_selenium_browser('file://' + os.getcwd() + '/app/templates/black.html')
     
     # launch flask server
     api.run(host='0.0.0.0', port=8000) 

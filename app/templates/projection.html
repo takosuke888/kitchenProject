@@ -12,14 +12,20 @@
 
 </style>
 
-<body>
+<body>sta
 
     <div class="mainblock">
-        <div class="recipe_name">{{data.title}}</div>
+        <div class="recipe-header">
+            <div class="recipe_name">{{data.title}}</div>
+            <div class="recipe_author">By {{data.author}} さん</div>
+            <div class="recipe_url">引用元：{{data.url}}</div>
+        </div>
         <div class="ingredients_block">
+            <!--動画または画像に関する条件を追記予定-->
             <div class="side_image"><img src={{data.main_img_path}}></div>        
             <div class="ingredients_list">
                 <p>材料</p>
+                <!--材料グループの上位ループを追記予定-->
                 {% for i in range(data.ingredient_length) %}
                 <div class="ingredients_row">
                     <span class="left">{{data.ingredient_names[i]}}</span>

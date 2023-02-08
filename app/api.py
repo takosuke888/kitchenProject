@@ -9,12 +9,12 @@ from . import browser_call
 
 api = Flask(__name__, static_folder='./static')
 
-coockpad_data = scraping.cockpadData()
+cookpad_data = scraping.cookpadData()
 
 # スマホに表示する画面
 @api.route('/', methods=['GET'])
 def index():
-    coockpad_data.clearData()
+    cookpad_data.clearData()
     return render_template('index.html')
 
 # URLを受け取って、スクレイピング
@@ -22,8 +22,8 @@ def index():
 def recieve_url():
 
     # set last-index
-    coockpad_data.step_last_index = int(request.form["index"])
-    print(coockpad_data.step_last_index)
+    cookpad_data.step_last_index = int(request.form["index"])
+    print(cookpad_data.step_last_index)
 
     url = request.form["field"]
     print(url)
@@ -43,20 +43,25 @@ def recieve_url():
     #    os.makedirs('app' + IMG_DIR)
 
     # スクレイピング処理
-    coockpad_data.scraping(url, "")
-    print(coockpad_data.title)
+    cookpad_data.scraping(url)
+    print(cookpad_data.title)
 
     #open html in browser
-    render_template('projection.html', data = coockpad_data)
-    browser_call.call_browser('http://0.0.0.0:8000/projection')
+    render_template('projection.html', data = cookpad_data)
+    browser_call.call_selenium_browser('http://0.0.0.0:8000/projection')
 
     # スクレイピングが完了したら、PC側でブラウザを起動
     return render_template('index.html')
     
 # プロジェクタ用の表示画面のURL
 @api.route('/projection', methods=['GET'])
-def projection():
-    return render_template('projection.html', data = coockpad_data)
+def projection_data():
+    return render_template('projection.html', data = cookpad_data)
+
+# プロジェクタ用の表示画面のURL
+@api.route('/black', methods=['GET'])
+def projection_black():
+    return render_template('black.html')
 
 
 
