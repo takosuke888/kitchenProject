@@ -21,3 +21,6 @@ def call_browser(url):
 
 def call_selenium_browser(url):    
     browser.get(url)
+
+def close_window():
+    browser.close()

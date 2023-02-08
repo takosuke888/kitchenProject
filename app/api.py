@@ -1,8 +1,6 @@
 from flask import Flask, request, make_response, render_template, url_for
 import os
-import cv2
-import numpy as np
-import subprocess, shlex
+import sys
 
 from . import scraping
 from . import browser_call
@@ -20,6 +18,8 @@ def index():
 # URLを受け取って、スクレイピング
 @api.route('/post_url', methods=['POST'])
 def recieve_url():
+
+    cookpad_data.clearData()
 
     # set last-index
     cookpad_data.step_last_index = int(request.form["index"])
@@ -62,6 +62,12 @@ def projection_data():
 @api.route('/black', methods=['GET'])
 def projection_black():
     return render_template('black.html')
+
+# プロジェクタ用の表示画面のURL
+@api.route('/exit', methods=['GET'])
+def exit_app():
+    browser_call.close_window()
+    return 'Thank you'
 
 
 
