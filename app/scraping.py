@@ -1,4 +1,4 @@
-import urllib.request #拡張子のないURLから画像を保存
+#import urllib.request #拡張子のないURLから画像を保存
 import requests # urlを読み込むためrequestsをインポート
 from bs4 import BeautifulSoup # htmlを読み込むためBeautifulSoupをインポート
 import csv
