@@ -13,9 +13,9 @@
 
 ## Additional Packages 
 - upgrade-chromium
--- sudo apt-get dist-upgrade chromium-browser
+    - sudo apt-get dist-upgrade chromium-browser
 - install latest chrome driver
--- sudo apt-get install chromium-chromedriver
+    - sudo apt-get install chromium-chromedriver
 *chromiumとseleniumのバージョンが一致していることを確認*
 
 
