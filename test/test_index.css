@@ -79,7 +79,6 @@ body {
     padding-right: 1%;
     padding-top: 0;
     padding-bottom: 0;
-    font-size: 20px;
 }
 
 .step_block{
@@ -90,7 +89,7 @@ body {
 }
 
 .step_title{
-    margin: 10px;
+    margin: 1%;
     font-size: 1.1em;
     font-weight: bold;
 }
@@ -102,9 +101,9 @@ body {
     width: fit-content;
     height: 40%;
     margin-top: 0;
-    margin-bottom: 5px;
-    margin-right: 25px;
-    margin-left: 5px;
+    margin-bottom: 1%;
+    margin-right: 2%;
+    margin-left: 1%;
     padding: 0%;
 }
 
@@ -115,9 +114,9 @@ body {
     width: 10%;
     height: 40%;
     margin-top: 0;
-    margin-bottom: 5px;
-    margin-right: 5px;
-    margin-left: 5px;
+    margin-bottom: 3%;
+    margin-right: 3%;
+    margin-left: 0%;
     padding: 0%;
 }
 
@@ -149,7 +148,7 @@ body {
     display: flex;
     justify-content: space-between;
     border-bottom: 1px solid rgb(212, 212, 212);
-    margin-top: 2px;
+    margin-top: 1%;
     font-size: 0.8em;
 }
 
@@ -161,7 +160,7 @@ body {
     margin-top: 35px;
     margin-left: 5px;
     overflow-wrap: break-word;
-}
+    }
 
 .line{
     display: inline-block;
@@ -174,14 +173,14 @@ body {
 
 .step_count{
     position:  absolute;        /* 要素の配置方法を指定 */
-    background-color: rgb(180, 180, 180);     /* 背景色指定 */            /* 余白指定 */
+    background-color: rgb(77, 77, 77);     /* 背景色指定 */            /* 余白指定 */
     left:  0px;                /* 左からの位置指定 */
     top: 0px;                  /* 上からの位置指定 */ 
-    border-radius: 5px;
-    width: 30px;
-    height: 23px;
+    border-radius: 20%;
+    width: 15%;
+    height: 18%;
     text-align:center;
-    padding-top: 5px;
+    padding-top: 3%;
     color: white;
     font-weight: bold;
 }

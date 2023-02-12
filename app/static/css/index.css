@@ -99,10 +99,10 @@ body::-webkit-scrollbar{
 
     width: fit-content;
     height: 40%;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    margin-right: 25px;
-    margin-left: 5px;
+    margin-top: 1%;
+    margin-bottom: 0%;
+    margin-right: 0%;
+    margin-left: 1%;
     padding: 0%;
 }
 
@@ -113,9 +113,9 @@ body::-webkit-scrollbar{
     width: 10%;
     height: 40%;
     margin-top: 0;
-    margin-bottom: 5px;
-    margin-right: 5px;
-    margin-left: 5px;
+    margin-bottom: 3%;
+    margin-right: 1%;
+    margin-left: 1%;
     padding: 0%;
 }
 
@@ -134,10 +134,8 @@ body::-webkit-scrollbar{
 
 .step_block img {
     height: auto;
-    max-width: 140px;
+    max-width: 120px;
 }
-
-
 
 .left, .right {
     display: inline-block;
@@ -175,7 +173,7 @@ body::-webkit-scrollbar{
     background-color: rgb(77, 77, 77);     /* 背景色指定 */            /* 余白指定 */
     left:  0px;                /* 左からの位置指定 */
     top: 0px;                  /* 上からの位置指定 */ 
-    border-radius: 5px;
+    border-radius: 5px; /*step_blockの横幅は画像の有無によって変化するのでpx指定*/
     width: 30px;
     height: 25px;
     text-align:center;

@@ -7,7 +7,7 @@ import os
 
 if __name__ == '__main__':
     
-    time.sleep(10)
+    #time.sleep(10)
     
     # get my ip adress
     s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
@@ -17,7 +17,7 @@ if __name__ == '__main__':
     
     # make qr code for smartphone
     img = qrcode.make('http://' + hostip + ':8000')
-    img.save("app/static/img/qr.png")
+    img.save("/home/takosuke/kitchenProject/app/static/img/qr.png")
     
     # launch browser
     #browser_call.call_selenium_browser('file://' + os.getcwd() + '/app/templates/black.html')
