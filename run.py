@@ -7,7 +7,7 @@ import os
 
 if __name__ == '__main__':
     
-    #time.sleep(10)
+    time.sleep(10)
     
     # get my ip adress
     s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
