@@ -16,7 +16,7 @@ class recipeData():
         self.title = ""
         self.author = ""
         
-        self.platform_name = ""
+        self.service_name = ""
 
         self.ingredient_length = 0
         self.ingredient_names = []
@@ -49,10 +49,10 @@ class recipeData():
         self.url = url
 
         if url.split('/')[2] == 'delishkitchen.tv':
-            self.platform_name = 'dk'
+            self.service_name = 'dk'
             return True
         elif url.split('/')[2] == 'cookpad.com':
-            self.platform_name = 'cp'
+            self.service_name = 'cp'
             return True
         else:
             return False
@@ -64,12 +64,12 @@ class recipeData():
            
         time.sleep(1)
 
-        if self.platform_name == 'cp':
+        if self.service_name == 'cp':
             self.cp_getMetaData(soup)
             self.cp_getIngredients(soup)
             self.cp_getSteps(soup)
 
-        elif self.platform_name == 'dk':
+        elif self.service_name == 'dk':
             self.dk_getMetaData(soup)
             self.dk_getIngredients(soup)
             self.dk_getSteps(soup)

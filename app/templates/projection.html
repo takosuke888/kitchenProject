@@ -22,9 +22,9 @@
         </div>
         <div class="ingredients_block">
             <!--動画または画像に関する条件を追記予定-->
-            {% if data.sercive_name == 'cp' %}
+            {% if data.service_name == 'cp' %}
                 <div class="side_image"><img src={{data.main_img_path}}></div>      
-            {% elif data.sercive_name == 'dk' %}  
+            {% elif data.service_name == 'dk' %}  
                 <video src={{data.main_video_path}} loop autoplay muted></video>
             {% endif %}
             <div class="ingredients_list">
@@ -46,7 +46,8 @@
                     <div class="step_count">{{i+1}}</div>
                     <div class="step_text">{{data.step_texts[i]}}</div>
                     {% if data.step_img_paths[i] != 'none' %}
-                    <div class="side_image"><div class="aimg"><img src={{data.step_img_paths[i]}}></div></div> 
+                    <div class="side_image"><img src={{data.step_img_paths[i]}}></div>
+                    <!--<div class="side_image"><div class="aimg"><img src={{data.step_img_paths[i]}}></div></div>-->
                     {% endif %}
                 </div>
                 {% endfor %}
