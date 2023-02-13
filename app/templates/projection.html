@@ -12,7 +12,7 @@
 
 </style>
 
-<body>
+<body class="{{data.service_name}}">
 
     <div class="mainblock">
         <div class="recipe-header">
@@ -22,7 +22,11 @@
         </div>
         <div class="ingredients_block">
             <!--動画または画像に関する条件を追記予定-->
-            <div class="side_image"><img src={{data.main_img_path}}></div>        
+            {% if data.sercive_name == 'cp' %}
+                <div class="side_image"><img src={{data.main_img_path}}></div>      
+            {% elif data.sercive_name == 'dk' %}  
+                <video src={{data.main_video_path}} loop autoplay muted></video>
+            {% endif %}
             <div class="ingredients_list">
                 <p>材料</p>
                 <!--材料グループの上位ループを追記予定-->
