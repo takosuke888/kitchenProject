@@ -55,13 +55,6 @@ def recieve_youtube_url():
 
     url = request.form["field"]
     print(url)
-
-    if url.split('watch?v=')[0] == 'https://www.youtube.com/':
-        pass
-    elif url.split('youtu.be')[0] == 'https://':
-        pass
-    else:
-        return 'Error: Invalid URL'
     
     return render_template('projection_youtbe.html', youtube_url_tail = url.split('watch?v=')[-1])
 
