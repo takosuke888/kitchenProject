@@ -68,14 +68,14 @@ def recieve_youtube_url():
     return render_template('index.html')
 
 # プロジェクタ用の表示画面のURL
-@api.route('/projection_youtube', methods=['GET'])
+@api.route('/projection', methods=['GET'])
 def projection_data():
     return render_template('projection.html', data = recipe_data)
 
 # プロジェクタ用の表示画面のURL
-@api.route('/projection', methods=['GET'])
+@api.route('/projection_youtube', methods=['GET'])
 def projection_data():
-    return render_template('projection.html', youtube_url_tail = youtube_url_tail)
+    return render_template('projection_youtube.html', youtube_url_tail = youtube_url_tail)
 
 # プロジェクタ用の表示画面のURL
 @api.route('/black', methods=['GET'])
