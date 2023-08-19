@@ -55,8 +55,10 @@ def recieve_youtube_url():
 
     url = request.form["field"]
     print(url)
+    url_tail = url.split('watch?v=')[-1]
+    print(url_tail)
     
-    return render_template('projection_youtbe.html', youtube_url_tail = url.split('watch?v=')[-1])
+    return render_template('projection_youtube.html', youtube_url_tail = url_tail)
 
 
 # プロジェクタ用の表示画面のURL
