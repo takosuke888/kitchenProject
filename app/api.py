@@ -8,6 +8,7 @@ from . import browser_call
 api = Flask(__name__, static_folder='./static')
 
 recipe_data = scraping.recipeData()
+youtube_url_tail = ''
 
 # スマホに表示する画面
 @api.route('/', methods=['GET'])
@@ -43,7 +44,7 @@ def recieve_url():
     print(recipe_data.title)
 
     #open html in browser
-    render_template('projection.html', data = recipe_data)
+    #render_template('projection.html', data = recipe_data)
     browser_call.call_selenium_browser('http://0.0.0.0:8000/projection')
 
     # スクレイピングが完了したら、PC側でブラウザを起動
@@ -53,18 +54,28 @@ def recieve_url():
 @api.route('/post_youtube_url', methods=['POST'])
 def recieve_youtube_url():
 
+    global youtube_url_tail
+
     url = request.form["field"]
     print(url)
-    url_tail = url.split('watch?v=')[-1]
-    print(url_tail)
-    
-    return render_template('projection_youtube.html', youtube_url_tail = url_tail)
+    youtube_url_tail = url.split('watch?v=')[-1]
 
+    #open html in browser
+    #render_template('projection_youtube.html', youtube_url_tail = url_tail)
+    browser_call.call_selenium_browser('http://0.0.0.0:8000/projection_youtube')
+
+    # スクレイピングが完了したら、PC側でブラウザを起動
+    return render_template('index.html')
+
+# プロジェクタ用の表示画面のURL
+@api.route('/projection_youtube', methods=['GET'])
+def projection_data():
+    return render_template('projection.html', data = recipe_data)
 
 # プロジェクタ用の表示画面のURL
 @api.route('/projection', methods=['GET'])
 def projection_data():
-    return render_template('projection.html', data = recipe_data)
+    return render_template('projection.html', youtube_url_tail = youtube_url_tail)
 
 # プロジェクタ用の表示画面のURL
 @api.route('/black', methods=['GET'])
