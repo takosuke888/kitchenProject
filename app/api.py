@@ -74,7 +74,7 @@ def projection_data():
 
 # プロジェクタ用の表示画面のURL
 @api.route('/projection_youtube', methods=['GET'])
-def projection_data():
+def projection_youtube_data():
     return render_template('projection_youtube.html', youtube_url_tail = youtube_url_tail)
 
 # プロジェクタ用の表示画面のURL
