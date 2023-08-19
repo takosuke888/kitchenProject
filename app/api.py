@@ -48,7 +48,20 @@ def recieve_url():
 
     # スクレイピングが完了したら、PC側でブラウザを起動
     return render_template('index.html')
+
+# URLを受け取って、スクレイピング
+@api.route('/post_youtube_url', methods=['POST'])
+def recieve_youtube_url():
+
+    url = request.form["field"]
+    print(url)
+
+    if url.split('watch?v=')[0] != 'https://www.youtube.com/':
+        return 'Error: Invalid URL'
     
+    return render_template('projection_youtbe.html', youtube_url_tail = url.split('watch?v=')[-1])
+
+
 # プロジェクタ用の表示画面のURL
 @api.route('/projection', methods=['GET'])
 def projection_data():
