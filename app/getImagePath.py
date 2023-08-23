@@ -11,8 +11,6 @@ def getImgPath():
     for file in files:
         path = './' + file.split('./app/')[-1]
         paths.append(path)
-    
-    print(paths)
-
+        
     return paths
     
