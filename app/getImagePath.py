@@ -10,7 +10,7 @@ def getImgPath():
         files += glob.glob('/home/takosuke/kitchenProject/app/static/img/*.' + t)
 
     for file in files:
-        newfile = './' + files.split('app/')[-1]
+        newfile = './' + file.split('app/')[-1]
         paths.append(newfile)
 
     random.shuffle(paths)
