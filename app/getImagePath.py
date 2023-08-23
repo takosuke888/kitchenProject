@@ -4,9 +4,13 @@ def getImgPath():
 
     types = ('jpg', 'png', 'JPG')
     files = []
+    paths = []
     for t in types:
-        file = glob.glob('./app/static/img/*.' + t)
-        path = './' + file.split('.app/')[-1]
-        files.append(path)
-    return files
+        files += glob.glob('./app/static/img/*.' + t)
+        
+    for file in files:
+        path = './' + file.split('./app/')[-1]
+        paths.append(path)
+    
+    return paths
     
