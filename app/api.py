@@ -4,6 +4,7 @@ import sys
 
 from . import scraping
 from . import browser_call
+from . import getImagePath
 
 api = Flask(__name__, static_folder='./static')
 
@@ -50,7 +51,7 @@ def recieve_url():
     # スクレイピングが完了したら、PC側でブラウザを起動
     return render_template('index.html')
 
-# URLを受け取って、スクレイピング
+# URLを受け取って、youtube動画を埋め込む
 @api.route('/post_youtube_url', methods=['POST'])
 def recieve_youtube_url():
 
@@ -73,18 +74,30 @@ def recieve_youtube_url():
     # スクレイピングが完了したら、PC側でブラウザを起動
     return render_template('index.html')
 
-# プロジェクタ用の表示画面のURL
+# URLを受け取って、youtube動画を埋め込む
+@api.route('/get_imageviewer_request', methods=['GET'])
+def get_imageviewer_request():
+    browser_call.call_selenium_browser('http://0.0.0.0:8000/imageviewer')
+    return render_template('index.html')
+
+# プロジェクタ用のレシピ表示画面のURL
 @api.route('/projection', methods=['GET'])
 def projection_data():
     return render_template('projection.html', data = recipe_data)
 
-# プロジェクタ用の表示画面のURL
+# プロジェクタ用のYoutube表示画面のURL
 @api.route('/projection_youtube', methods=['GET'])
 def projection_youtube_data():
     #test
     return render_template('projection_youtube.html', youtube_url_tail = youtube_url_tail)
 
-# プロジェクタ用の表示画面のURL
+# プロジェクタ用の画像表示URL
+@api.route('/imageviewer', methods=['GET'])
+def projection_image():
+    images = getImagePath.getImgPath()
+    return render_template('projection_images.html', images = images)
+
+# プロジェクタ用の黒画面表示画面のURL
 @api.route('/black', methods=['GET'])
 def projection_black():
     return render_template('black.html')
