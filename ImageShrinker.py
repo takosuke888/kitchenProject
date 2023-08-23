@@ -4,7 +4,7 @@ import glob
 types = ('jpg', 'png', 'JPG')
 files = []
 for t in types:
-    files += glob.glob('./static/src/*.' + t)
+    files += glob.glob('./app/static/src/*.' + t)
 
 for file in files:
     print(file)
