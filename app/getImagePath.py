@@ -7,7 +7,7 @@ def getImgPath():
     files = []
     paths = []
     for t in types:
-        files += glob.glob('./app/static/img/*.' + t)
+        files += glob.glob('/home/takosuke/kitchenProject/app/static/img/*.' + t)
         
     for file in files:
         path = './' + file.split('./app/')[-1]
