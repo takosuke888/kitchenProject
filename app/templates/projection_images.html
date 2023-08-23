@@ -23,8 +23,8 @@
 
 <body>
     <div class="slider">
-        {% for i in range(len(images)) %}
-            <img src="{{images[i]}}" width="100%">
+        {% for img in images %}
+            <img src="{{img}}" width="100%">
         {% endfor %}
     </div>
 </body>
