@@ -45,7 +45,7 @@ def recieve_url():
     print(recipe_data.title)
 
     #open html in browser
-    render_template('projection.html', data = recipe_data)
+    #render_template('projection.html', data = recipe_data)
     browser_call.call_selenium_browser('http://0.0.0.0:8000/projection')
 
     # スクレイピングが完了したら、PC側でブラウザを起動
@@ -68,7 +68,7 @@ def recieve_youtube_url():
         return 'Invalid URL'
 
     #open html in browser
-    render_template('projection_youtube.html', youtube_url_tail = youtube_url_tail)
+    #render_template('projection_youtube.html', youtube_url_tail = youtube_url_tail)
     browser_call.call_selenium_browser('http://0.0.0.0:8000/projection_youtube')
 
     # スクレイピングが完了したら、PC側でブラウザを起動
