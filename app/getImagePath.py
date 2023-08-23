@@ -1,4 +1,5 @@
 import glob
+import random
 
 def getImgPath():
 
@@ -11,6 +12,6 @@ def getImgPath():
     for file in files:
         path = './' + file.split('./app/')[-1]
         paths.append(path)
-        
-    return paths
+
+    return random.shuffle(paths)
     

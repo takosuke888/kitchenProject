@@ -14,5 +14,5 @@ for file in files:
     h2 = round(h * 1280 / w )
     resized = cv2.resize(img, (w2, h2))
     filename = file.split('\\')[-1]
-    newname = './static/img/' + filename
+    newname = './app/static/img/' + filename
     cv2.imwrite(newname, resized)
