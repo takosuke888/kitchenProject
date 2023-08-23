@@ -8,12 +8,8 @@ def getImgPath():
     paths = []
     for t in types:
         files += glob.glob('/home/takosuke/kitchenProject/app/static/img/*.' + t)
-        
-    for file in files:
-        path = './' + file.split('./app/')[-1]
-        paths.append(path)
 
-    random.shuffle(paths)
+    random.shuffle(files)
 
     return paths
     
