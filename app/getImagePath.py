@@ -10,5 +10,7 @@ def getImgPath():
 
     random.shuffle(files)
 
+    print(files)
+
     return files
     
