@@ -70,6 +70,8 @@ def recieve_youtube_url():
     #open html in browser
     #render_template('projection_youtube.html', youtube_url_tail = youtube_url_tail)
     browser_call.call_selenium_browser('http://0.0.0.0:8000/projection_youtube')
+    #click to play
+    browser_call.click_by_position(x, y)
 
     # スクレイピングが完了したら、PC側でブラウザを起動
     return render_template('index.html')
