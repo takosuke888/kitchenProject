@@ -33,7 +33,6 @@ def click_by_position(x, y) -> None:
 
     # MOVE TO TOP_LEFT (`move_to_element` will guide you to the CENTER of the element)
     whole_page = browser.find_element(By.TAG_NAME, "body")
-
     actions.move_to_element_with_offset(whole_page, 0, 0)
 
     # MOVE TO DESIRED POSITION THEN CLICK
