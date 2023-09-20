@@ -1,2 +1,4 @@
 __pycache__
 .goutputstream*
+/app/static/img/*
+/app/static/src/*
